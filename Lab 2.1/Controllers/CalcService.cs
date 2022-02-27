@@ -1,0 +1,59 @@
+﻿using Microsoft.AspNetCore.Mvc;
+
+namespace lab_2._1.Controllers
+{
+    public class CalcService : Controller
+    {
+        private readonly IRand _randinterface;
+     
+        public CalcService(IRand RandService) 
+        {
+            _randinterface = RandService;
+        }
+        public IActionResult Index()
+        {
+            return View();
+        }
+
+        public IActionResult PassUsingModel()
+        {
+            var model = new lab_2._1.Models.RandModel();
+            return View(model);
+        }
+
+        public IActionResult PassUsingViewData()
+        {
+            var model = new lab_2._1.Models.RandModel();
+            ViewData["firstval"] = model.firstval;
+            ViewData["secondval"] = model.secondval;
+            ViewData["Add"] = model.Add();
+            ViewData["Sub"] = model.Sub();
+            ViewData["Mult"] = model.Mult();
+            ViewData["Div"] = model.Div();
+            return View();
+        }
+
+        public IActionResult PassUsingViewBag()
+        {
+            var model = new lab_2._1.Models.RandModel();
+            ViewBag.firstval = model.firstval;
+            ViewBag.secondval = model.secondval;
+            ViewBag.Add = model.Add();
+            ViewBag.Sub = model.Sub();
+            ViewBag.Mult = model.Mult();
+            ViewBag.Div = model.Div();
+            return View();
+        }
+
+        public IActionResult AccesServiceDirectly()
+        {
+            ViewBag.firstval = _randinterface.GetFirstval();
+            ViewBag.secondval = _randinterface.GetSecondval();
+            ViewBag.Add = _randinterface.Add();
+            ViewBag.Sub = _randinterface.Sub();
+            ViewBag.Mult = _randinterface.Mult();
+            ViewBag.Div = _randinterface.Div();
+            return View();
+        }
+    }
+}

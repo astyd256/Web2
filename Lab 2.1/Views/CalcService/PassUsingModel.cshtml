@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewData["Title"] = "PassUsingModel";
+}
+@model lab_2._1.Models.RandModel
+<h2>PassUsingModel</h2>
+
+<p><b>Rand value First: @Model.firstval</b></p>
+<p><b>Rand value Second: @Model.secondval</b></p>
+<p><b>Add:</b></p>
+<p>@Model.firstval + @Model.secondval = @Model.Add()</p>
+<p><b>Sub:</b></p>
+<p>@Model.firstval - @Model.secondval = @Model.Sub()</p>
+<p><b>Mult:</b></p>
+<p>@Model.firstval * @Model.secondval = @Model.Mult()</p>
+<p><b>Div:</b></p>
+<p>@Model.firstval / @Model.secondval = @Model.Div()</p>
+
