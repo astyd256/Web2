@@ -4,12 +4,7 @@ namespace lab_2._1.Controllers
 {
     public class CalcService : Controller
     {
-        private readonly IRand _randinterface;
-     
-        public CalcService(IRand RandService) 
-        {
-            _randinterface = RandService;
-        }
+
         public IActionResult Index()
         {
             return View();
@@ -44,15 +39,8 @@ namespace lab_2._1.Controllers
             ViewBag.Div = model.Div();
             return View();
         }
-
         public IActionResult AccesServiceDirectly()
         {
-            ViewBag.firstval = _randinterface.GetFirstval();
-            ViewBag.secondval = _randinterface.GetSecondval();
-            ViewBag.Add = _randinterface.Add();
-            ViewBag.Sub = _randinterface.Sub();
-            ViewBag.Mult = _randinterface.Mult();
-            ViewBag.Div = _randinterface.Div();
             return View();
         }
     }

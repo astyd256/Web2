@@ -2,16 +2,16 @@
 @{
     ViewData["Title"] = "AccesServiceDirectly";
 }
-
+@inject IRand randService
 <h2>AccesServiceDirectly</h2>
 
-<p><b>Rand value First: @ViewBag.firstval</b></p>
-<p><b>Rand value Second: @ViewBag.secondval</b></p>
+<p><b>Rand value First: @randService.GetFirstval()</b></p>
+<p><b>Rand value Second: @randService.GetSecondval()</b></p>
 <p><b>Add:</b></p>
-<p>@ViewBag.firstval + @ViewBag.secondval = @ViewBag.Add</p>
+<p>@randService.GetFirstval() + @randService.GetSecondval() = @randService.Add()</p>
 <p><b>Sub:</b></p>
-<p>@ViewBag.firstval - @ViewBag.secondval = @ViewBag.Sub</p>
+<p>@randService.GetFirstval() - @randService.GetSecondval() = @randService.Sub()</p>
 <p><b>Mult:</b></p>
-<p>@ViewBag.firstval * @ViewBag.secondval = @ViewBag.Mult</p>
+<p>@randService.GetFirstval() * @randService.GetSecondval() = @randService.Mult()</p>
 <p><b>Div:</b></p>
-<p>@ViewBag.firstval / @ViewBag.secondval = @ViewBag.Div</p>
+<p>@randService.GetFirstval() / @randService.GetSecondval() = @randService.Div()</p>
