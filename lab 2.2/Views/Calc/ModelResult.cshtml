@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewData["Title"] = "ModelResult";
+}
+
+<h2>Result</h2>
+@{
+	string opperand = @ViewBag.opperand;
+	int number1 = @ViewBag.number1;
+	int number2 = @ViewBag.number2;
+	int result = 0;
+	switch (opperand) {
+		case "+":
+			result = number1 + number2;
+			break;
+		case "-":
+			result = number1 - number2;
+			break;
+		case "*":
+			result = number1 * number2;
+			break;
+		case "/":
+			result = number1 / number2;
+			break;
+		}
+}
+<p>@ViewBag.number1 @ViewBag.opperand @ViewBag.number2 = @result</p>
+
+

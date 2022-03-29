@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewData["Title"] = "Home";
+}
+
+<h2>Calc Service demonstartion</h2>
+<ul>
+    <li>
+        <a asp-area="" asp-controller="Calc" asp-action="Manual">Manual parsing in single action</a>
+    </li>
+    <li>
+        <a asp-area="" asp-controller="Calc" asp-action="ManualWithSeprateHandlers">Manual parsing in separate actions</a>
+    </li>
+    <li>
+        <a asp-area="" asp-controller="Calc" asp-action="ModelBindingParameters">Model binding (parameters)</a>
+    </li>
+    <li>
+        <a asp-area="" asp-controller="Calc" asp-action="ModelBindingSeparateModel">Model binding (separate model)</a>
+    </li>
+</ul>
+

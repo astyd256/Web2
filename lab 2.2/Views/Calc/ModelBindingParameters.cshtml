@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewData["Title"] = "ModelBindingParameters";
+}
+
+<form name = "userForm3" method = "POST">
+<div class = "main">
+<h2>Manual</h2>
+@Html.TextBox("number1", "0", new{@class = "number", required = "required", maxlength = "8", size = "10"})
+<select name="opperand" Size="Number_of_options">  
+	<option> + </option>	
+	<option> - </option> 
+	<option> * </option>  
+	<option> / </option>  
+</select>  
+@Html.TextBox("number2", "0", new{@class = "number", required = "required", maxlength = "8", size = "10"})
+<button name="submit">Submit</button>
+</div>
+</form>

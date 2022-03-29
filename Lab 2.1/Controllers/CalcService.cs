@@ -4,7 +4,6 @@ namespace lab_2._1.Controllers
 {
     public class CalcService : Controller
     {
-
         public IActionResult Index()
         {
             return View();

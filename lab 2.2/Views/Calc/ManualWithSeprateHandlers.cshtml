@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewData["Title"] = "ManualWithSeprateHandlers";
+}
+<form name = "userForm2">
+<div class = "result">
+<h2>Result</h2>
+<p class = "answer"></p>
+</div>
+<div class = "main">
+<h2>Manual</h2>
+@Html.TextBox("number1", "0", new{@class = "number", required = "required", maxlength = "8", size = "10"})
+<select name="operator" Size="Number_of_options">  
+<select name="operator">  
+	<option> + </option>  
+	<option> - </option> 
+	<option> * </option>  
+	<option> / </option>  
+</select>  
+@Html.TextBox("number1", "0", new{@class = "number", required = "required", maxlength = "8", size = "10"})
+<select name="operator" Size="Number_of_options">  
+<button name="submit">Submit</button>
+</div>
+</form>
