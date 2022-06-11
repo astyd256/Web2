@@ -1,0 +1,41 @@
+﻿@model lab_2._3.Models.ValidationModel
+
+@{
+	ViewData["Title"] = "Hello Quiz";
+}	
+
+@if(ViewBag.ShowQuiz)
+{
+	<form method="POST" action="Quiz"> 
+		<h2>Quiz</h2>
+		<div class = "main">
+			<h4> @ViewBag.numberOne @ViewBag.operand @ViewBag.numberTwo =</h4>
+			@Html.TextBox("answer", "", new{ @class = "number", maxlength = "8", size = "18", asp_for = "answer"})
+			<span asp-validation-for="answer"></span>
+			<div class = "filler"></div>
+			<button name ="button" value = "next" type = "submit" >Next</button>
+			<button name ="button" class = "finish" value = "finish" type = "submit">Finish</button>
+		</div>
+	</form>
+}
+else
+{
+	<form> 
+		<h2>Quiz results</h2>
+		<div class = "main">
+			<h3> Right answers @ViewBag.correctAnswersAmount out @ViewBag.AnswersAmount </h3>
+			<ol>
+				<li>@ViewBag.numberOne[0] @ViewBag.operand[0] @ViewBag.numberTwo[0] = @ViewBag.userAnswers[0]</li>
+				<li>@ViewBag.numberOne[1] @ViewBag.operand[1] @ViewBag.numberTwo[1] = @ViewBag.userAnswers[1]</li>
+				<li>@ViewBag.numberOne[2] @ViewBag.operand[2] @ViewBag.numberTwo[2] = @ViewBag.userAnswers[2]</li>
+				<li>@ViewBag.numberOne[3] @ViewBag.operand[3] @ViewBag.numberTwo[3] = @ViewBag.userAnswers[3]</li>
+			</ol>
+		</div>
+	</form>
+}
+@section scripts{ 
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}
+
+
