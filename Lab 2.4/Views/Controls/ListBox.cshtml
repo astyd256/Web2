@@ -1,0 +1,35 @@
+@model lab_2._4.Models.ValidationModel
+
+@{
+	ViewData["Title"] = "List Box";
+}	
+
+@if(!ViewBag.Submit)
+{
+	<form method="POST" action="ListBox"> 
+		<h2>ListBox</h2>
+        <div>Month</div>
+		@Html.ListBoxFor(model => model.data, 
+        new SelectList(new List<string>()
+            {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"}))
+		<div class = "filler"></div>           
+        <button type="submit" class="btn btn-outline-secondary text-dark">Submit</button>
+	</form>
+}
+else
+{
+	<form> 
+		<h2>ListBox</h2>
+		<div class = "main">
+        <a><b>Month</b> @ViewBag.data</a>
+		</div>
+	</form>
+}
+@section scripts{ 
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}
+
+
+
+

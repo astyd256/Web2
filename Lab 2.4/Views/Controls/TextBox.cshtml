@@ -1,0 +1,32 @@
+@model lab_2._4.Models.ValidationModel
+
+@{
+	ViewData["Title"] = "Text Box";
+}	
+
+@if(!ViewBag.Submit)
+{
+	<form method="POST" action="TextBox"> 
+		<h2>TextBox</h2>
+		<div>Text</div>
+		@Html.TextBoxFor(model => model.data)
+		@Html.ValidationMessageFor(model => model.data) 
+		<div class = "filler"></div>           
+        <button type="submit" class="btn btn-outline-secondary text-dark">Submit</button>
+	</form>
+}
+else
+{
+	<form> 
+		<h2>TextBox</h2>
+		<div class = "main">
+        <a><b>Text</b> @ViewBag.data</a>
+		</div>
+	</form>
+}
+@section scripts{ 
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}
+
+

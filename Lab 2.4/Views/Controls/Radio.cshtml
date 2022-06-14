@@ -1,0 +1,43 @@
+@model lab_2._4.Models.ValidationModel
+
+@{
+	ViewData["Title"] = "Radio";
+}	
+
+@if(!ViewBag.Submit)
+{
+	<form method="POST" action="Radio"> 
+		<h2>CheckBox</h2>
+		@Html.RadioButtonFor(model => model.data, "January") <a>January</a> <br>
+		@Html.RadioButtonFor(model => model.data, "February") <a>February</a> <br>
+        @Html.RadioButtonFor(model => model.data, "March") <a>March</a> <br>
+        @Html.RadioButtonFor(model => model.data, "April") <a>April</a> <br>
+        @Html.RadioButtonFor(model => model.data, "May") <a>May</a> <br>
+        @Html.RadioButtonFor(model => model.data, "June") <a>June</a> <br>
+        @Html.RadioButtonFor(model => model.data, "July") <a>July</a> <br>
+        @Html.RadioButtonFor(model => model.data, "August") <a>August</a> <br>
+        @Html.RadioButtonFor(model => model.data, "September") <a>September</a> <br>
+        @Html.RadioButtonFor(model => model.data, "October") <a>October</a> <br>
+        @Html.RadioButtonFor(model => model.data, "November") <a>November</a> <br>
+        @Html.RadioButtonFor(model => model.data, "December") <a>December</a> 
+		<div class = "filler"></div>           
+        <button type="submit" class="btn btn-outline-secondary text-dark">Submit</button>
+	</form>
+}
+else
+{
+	<form> 
+		<h2>CheckBox</h2>
+		<div class = "main">
+        <a><b>Month</b> @ViewBag.data</a>
+		</div>
+	</form>
+}
+@section scripts{ 
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}
+
+
+
+

@@ -1,0 +1,77 @@
+@model lab_2._4.Models.UserModel
+
+@{
+	ViewData["Title"] = "SignUp";
+}	
+
+@if(!ViewBag.Submit)
+{
+	<form method="POST" action="SignUp"> 
+		<h2>Sign up</h2>
+		
+		<div>First name</div>
+		@Html.TextBoxFor(model => model.firstName) 
+		@Html.ValidationMessageFor(model => model.firstName) 
+		<div class = "filler"></div> 
+
+		<div>Last name</div>
+		@Html.TextBoxFor(model => model.lastName) 
+		@Html.ValidationMessageFor(model => model.lastName)
+		<div class = "filler"></div> 
+
+		<div>Birthday</div>
+		@{
+			List<int>days = new List<int>(31);
+			for(int i = 1; i < 32; i++) days.Add(i);
+			List<int>years = new List<int>(60);
+			for(int i = 1940; i < 2011; i++) years.Add(i);
+		}
+		@Html.DropDownListFor(model => model.day, new SelectList(days)) 
+		@Html.ValidationMessageFor(model => model.day)
+		@Html.DropDownListFor(model => model.month, new SelectList(new List<string>()
+            {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"})) 
+		@Html.ValidationMessageFor(model => model.month)
+		@Html.DropDownListFor(model => model.year, new SelectList(years)) 
+		@Html.ValidationMessageFor(model => model.year)
+		<div class = "filler"></div> 
+
+		<div>Gender</div>
+		@Html.RadioButtonFor(model => model.gender, "male") <a>Male</a> <br>
+		@Html.RadioButtonFor(model => model.gender, "female") <a>Female</a>
+		@Html.ValidationMessageFor(model => model.gender)
+		<div class = "filler"></div>           
+        <button class="btn btn-primary" type="submit">Sign up</button>
+	</form>
+}
+else
+{		
+	<form method="POST" action="SignUp"> 
+		<h2>Sign up</h2>
+		
+		<div>Email</div>
+		@Html.TextBoxFor(model => model.email) 
+		@Html.ValidationMessageFor(model => model.email) 
+		<div class = "filler"></div> 
+
+		<div>Password</div>
+		@Html.TextBoxFor(model => model.password, new{type = "password"}) 
+		@Html.ValidationMessageFor(model => model.password)
+		<div class = "filler"></div>
+
+		<div>Confirm password</div>
+		@Html.TextBoxFor(model => model.confirmPassword, new{type = "password"}) 
+		@Html.ValidationMessageFor(model => model.confirmPassword)
+		<div class = "filler"></div>
+
+		@Html.CheckBoxFor(model => model.remember, new {required = true}) <a>Remember?</a> <br>
+		@Html.ValidationMessageFor(model => model.remember)
+         
+        <button class="btn btn-primary" type="submit">Complete sign in</button>
+	</form>
+}
+@section scripts{ 
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}
+
+

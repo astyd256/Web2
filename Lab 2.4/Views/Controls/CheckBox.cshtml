@@ -1,0 +1,31 @@
+@model lab_2._4.Models.ValidationModel
+
+@{
+	ViewData["Title"] = "Check Box";
+}	
+
+@if(!ViewBag.Submit)
+{
+	<form method="POST" action="SignUp"> 
+		<h2>CheckBox</h2>
+
+		<div class = "filler"></div>           
+        <button type="submit" class="btn btn-outline-secondary text-dark">Submit</button>
+	</form>
+}
+else
+{
+	<form> 
+		<h2>CheckBox</h2>
+		<div class = "main">
+		@Html.ValidationMessageFor(model => model.isActive) 
+        <a><b>isSelected</b> @ViewBag.isActive</a>
+		</div>
+	</form>
+}
+@section scripts{ 
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}
+
+
