@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - lab_2._5</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/lab_2._4.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark navbar-expand-lg">
+        <div class="container">
+            <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">Backend4</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                    <a class="nav-link" asp-area="" asp-controller="HospitalsModels" asp-action="Index">Hospitals</a>
+                    <a class="nav-link" asp-area="" asp-controller="LabsModels" asp-action="Index">Labs</a>
+                    <a class="nav-link" asp-area="" asp-controller="DoctorsModels" asp-action="Index">Doctors</a>
+                    <a class="nav-link" asp-area="" asp-controller="PatientsModels" asp-action="Index">Patients</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container body-content">
+            @RenderBody()
+        <hr/>
+    </div>
+
+    <footer class="">
+        <div class="container">
+            &copy; 2022 - Backend4
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

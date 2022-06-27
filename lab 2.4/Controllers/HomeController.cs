@@ -4,11 +4,11 @@ using lab_2._4.Models;
 
 namespace lab_2._4.Controllers;
 
-public class Home : Controller
+public class HomeController : Controller
 {
-    private readonly ILogger<Home> _logger;
+    private readonly ILogger<HomeController> _logger;
 
-    public Home(ILogger<Home> logger)
+    public HomeController(ILogger<HomeController> logger)
     {
         _logger = logger;
     }
